@@ -11,14 +11,15 @@ y = np.array([0, 0, 0, 1, 1, 1, 2, 2, 2])
 # 2 Let's initialize the logistic regression classifier
 classifier = linear_model.LogisticRegression(solver='lbfgs', C=100)
 
-# There are a number of input parameters that can be
-# specified for the preceding function, but a couple of
-# important ones are solver and C.
-# The solver parameter specifies the type of solver that
-# the algorithm will use to solve the system of equations
-# The C parameter controls the regularization strength. A
-# lower value indicateds higher regularization strength
-
+"""
+There are a number of input parameters that can be
+specified for the preceding function, but a couple of
+important ones are solver and C.
+The solver parameter specifies the type of solver that
+the algorithm will use to solve the system of equations
+The C parameter controls the regularization strength. A
+lower value indicateds higher regularization strength
+"""
 # 3 Let's train the classifier
 classifier.fit(X, y)
 
@@ -27,11 +28,12 @@ classifier.fit(X, y)
 x_min, x_max = min(X[:, 0]), max(X[:, 0]) + 1.0
 y_min, y_max = min(X[:, 1]), max(X[:, 1]) + 1.0
 
-# The precedinf values indicate the range of values that we
-# Want to use in our figure. The values usually range from the
-# minimum value to the maximum value present in our data.
-# We add some buffers, such as 1.0, the preceding lines, for clarity
-
+"""
+The precedinf values indicate the range of values that we
+Want to use in our figure. The values usually range from the
+minimum value to the maximum value present in our data.
+We add some buffers, such as 1.0, the preceding lines, for clarity
+"""
 # 5 In order to plot the boundaries, we need to evaluate the function across a grid
 # of points and plot it. Let's go ahead and define the grid
 # denotes the step size that will be used in the mesh grid
@@ -71,22 +73,22 @@ plt.xticks((np.arange(int(min(X[:, 0])-1), int(max(X[:, 0])+1), 1.0)))
 plt.yticks((np.arange(int(min(X[:, 1])-1), int(max(X[:, 1])+1), 1.0)))
 
 plt.show()
-
-# Here, plt.scatter plots the points on the 2D graph. X[:, 0] 
-# specifies that we should take all the values along the 0 axis 
-# (the x axis in our case), and X[:, 1] specifies axis 1 
-# (the y axis). The c=y parameter indicates the color sequence.
-# We use the target labels to map to colors using cmap. Basically, 
-# we want different colors that are based on the target labels. 
-# Hence, we use y as the mapping. The limits of the display 
-# figure are set using plt.xlim and plt.ylim. In order to mark the 
-# axes with values, we need to use plt.xticks and plt.yticks.
-# These functions mark the axes with values so that it's easier 
-# for us to see where the points are located. In the preceding 
-# code, we want the ticks to lie between the minimum and maximum 
-# values with a buffer of one unit. Also, we want these ticks 
-# to be integers. So, we use the int() function to round off the values.
-
+"""
+Here, plt.scatter plots the points on the 2D graph. X[:, 0] 
+specifies that we should take all the values along the 0 axis 
+(the x axis in our case), and X[:, 1] specifies axis 1 
+(the y axis). The c=y parameter indicates the color sequence.
+We use the target labels to map to colors using cmap. Basically, 
+we want different colors that are based on the target labels. 
+Hence, we use y as the mapping. The limits of the display 
+figure are set using plt.xlim and plt.ylim. In order to mark the 
+axes with values, we need to use plt.xticks and plt.yticks.
+These functions mark the axes with values so that it's easier 
+for us to see where the points are located. In the preceding 
+code, we want the ticks to lie between the minimum and maximum 
+values with a buffer of one unit. Also, we want these ticks 
+to be integers. So, we use the int() function to round off the values.
+"""
 # 9 Run the code
 
 # 10 Let's see how the c parameter affects our model? The c parameter indicates
